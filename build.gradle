@@ -1,0 +1,50 @@
+// Top-level build file where we can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    apply from: "./dependencies.gradle"
+
+    ext {
+        compose_version = versions.compose
+        kotlinVersion = versions.kotlin
+    }
+
+    repositories {
+        mavenCentral()
+        maven { url "https://plugins.gradle.org/m2/" }
+        maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
+        google()
+    }
+
+    dependencies {
+        classpath "com.android.tools.build:gradle:$versions.gradlePlugin"
+        classpath deps.gradle.kotlinPlugin
+        classpath deps.gradle.navigationSafeArgs
+        classpath deps.gradle.parcelize
+        classpath deps.gradle.hilt
+    }
+}
+
+plugins {
+    id 'org.sonarqube' version '4.0.0.2929'
+}
+
+allprojects {
+    repositories {
+        maven {
+            setUrl("https://husqvarnadss.jfrog.io/husqvarnadss/libs-release")
+            credentials {
+                username = System.getProperty("artifactory.username", "amc-resolver")
+                password = System.getProperty("artifactory.password", "zQC5N!B&87KcDEdU#0EG%@K*4tnk5C\$X")
+            }
+        }
+        mavenCentral()
+        maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
+        maven { url 'https://maven.google.com' }
+        maven { url "https://plugins.gradle.org/m2/" }
+        google()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

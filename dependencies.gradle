@@ -1,0 +1,193 @@
+ext.versions = [
+        'versionName'           : '4.2.1', // 2023:3 Release, make sure to verify this name with release document
+        'versionCode'           : 310125,
+
+        'minSdk'                : 24,
+        'compileSdk'            : 33,
+        'targetSdk'             : 33,
+
+        'javaVersion'           : JavaVersion.VERSION_11,
+
+        // Gradle
+        'gradlePlugin'          : '7.4.1',
+        'googleServicesPlugin'  : '4.3.10',
+        'performancePlugin'     : '1.4.1',
+        'crashlyticsPlugin'     : '2.5.2',
+        'navigation'            : '2.5.3',
+        'hilt'                  : '2.44.2',
+
+        // Husqvarna
+        'hudskit'               : '0.100',
+
+        // Compose
+        'compose'               : '1.4.0',
+
+        // Kotlin
+        'kotlin'                : '1.8.21',
+        'kotlinCoroutines'      : '1.7.1',
+
+        // androidX
+        annotation              : '1.1.0',
+        'design'                : '1.4.0',
+        'appcompat'             : '1.2.0',
+        'cardView'              : '1.0.0',
+        'viewpager2'            : '1.0.0',
+        'recyclerView'          : '1.1.0',
+        'constraintLayout'      : '2.0.2',
+        'lifecycle'             : '2.5.1',
+        'mediarouter'           : '1.1.0',
+        'preference'            : '1.1.1',
+        'ktxCore'               : '1.6.0',
+        'googleMap'             : '17.0.0',
+        'googleCore'            : '1.8.1',
+        'firebaseBom'           : '31.2.0',
+        'guava'                 : '29.0-jre',
+        'arch'                  : '2.1.0',
+        'workRuntime'           : '2.7.0',
+        'swipeRefresh'          : '1.1.0',
+
+        // network
+        'okhttp'                : '4.9.1',
+        'securityCrypto'        : '1.1.0-alpha01',
+        'retrofit'              : '2.9.0',
+        'moshi'                 : '1.12.0',
+
+        // Other libraries
+        'viewPagerIndicator'    : '2.4.1.1@aar', // deprecated only uses viewpager and not viewpager2
+        'joda'                  : '2.10.6',
+        'picasso'               : '2.71828',
+        'ifttt'                 : '2.3.7',
+        'timber'                : '4.7.1',
+        'ossLicensesPlugin'     : '0.10.4',
+        'ossLicenses'           : '17.0.0',
+        'glide'                 : '4.13.1',
+        'shimmer'               : '0.5.0@aar',
+        'lottie'                : '5.2.0',
+
+        // Tests
+        'junit'                 : '5.9.0',
+        'junitPlatform'         : '1.8.1',
+        'mockito'               : '5.1.1',
+        'mockitoKotlin'         : '4.1.0',
+
+        'powerMockVersion'      : '2.0.7',
+
+        'coreTesting'           : '2.1.0',
+        'appcenterEspresso'     : '1.4',
+        'testRules'             : '1.3.0',
+        'espresso'              : '3.3.0',
+        'textExtJunit'          : '1.1.2',
+        'screengrap'            : '2.0.0',
+        'robolectric'           : '4.6.1',
+        'xmlunit'               : '1.6',
+        'turbine'               : '0.7.0',
+
+        // code quality
+        'jacoco'                : '0.8.8',
+]
+ext.deps = [
+        gradle    : [
+                'gradlePlugin'          : "com.android.tools.build:gradle:${versions.gradlePlugin}",
+                'kotlinPlugin'          : "org.jetbrains.kotlin:kotlin-gradle-plugin:${versions.kotlin}",
+                'googleServicesPlugin'  : "com.google.gms:google-services:${versions.googleServicesPlugin}",
+                'navigationSafeArgs'    : "androidx.navigation:navigation-safe-args-gradle-plugin:${versions.navigation}",
+                'performancePlugin'     : "com.google.firebase:perf-plugin:${versions.performancePlugin}",
+                'crashlyticsPlugin'     : "com.google.firebase:firebase-crashlytics-gradle:${versions.crashlyticsPlugin}",
+                'ossLicensesPlugin'     : "com.google.android.gms:oss-licenses-plugin:${versions.ossLicensesPlugin}",
+                'parcelize'             : "org.jetbrains.kotlin:kotlin-gradle-plugin:${versions.kotlin}",
+                'hilt'                  : "com.google.dagger:hilt-android-gradle-plugin:${versions.hilt}",
+        ],
+        husqvarna : [
+                'hudskit'               : "com.husqvarnagroup.dss.hudskit:hudskit-android:${versions.hudskit}"
+        ],
+        android   : [
+                annotation              : "androidx.annotation:annotation:${versions.annotation}",
+                'designSupport'         : "com.google.android.material:material:${versions.design}",
+                'appCompat'             : "androidx.appcompat:appcompat:${versions.appcompat}",
+                'constraintLayout'      : "androidx.constraintlayout:constraintlayout:${versions.constraintLayout}",
+                'mediarouter'           : "androidx.mediarouter:mediarouter:${versions.mediarouter}",
+                'recyclerView'          : "androidx.recyclerview:recyclerview:${versions.recyclerView}",
+                'cardView'              : "androidx.cardview:cardview:${versions.cardView}",
+                'lifecycleRuntime'      : "androidx.lifecycle:lifecycle-runtime:${versions.lifecycle}",
+                'lifecycleViewModel'    : "androidx.lifecycle:lifecycle-viewmodel-ktx:${versions.lifecycle}",
+                'lifecycleRuntimeExt'   : "androidx.lifecycle:lifecycle-runtime-ktx:${versions.lifecycle}",
+                'lifecycleCommon'       : "androidx.lifecycle:lifecycle-common-java8:${versions.lifecycle}",
+                'lifecycleService'   : "androidx.lifecycle:lifecycle-service:${versions.lifecycle}",
+                'ktxPreference'         : "androidx.preference:preference-ktx:${versions.preference}",
+                'securityCrypto'        : "androidx.security:security-crypto:${versions.securityCrypto}",
+                'ktxCore'               : "androidx.core:core-ktx:${versions.ktxCore}",
+                'archCommon'            : "androidx.arch.core:core-common:${versions.arch}",
+                'archRuntime'           : "androidx.arch.core:core-runtime:${versions.arch}",
+                'navFragment'           : "androidx.navigation:navigation-fragment-ktx:${versions.navigation}",
+                'navFragmentUi'         : "androidx.navigation:navigation-ui-ktx:${versions.navigation}",
+                'workRuntime'           : "androidx.work:work-runtime:${versions.workRuntime}",
+                'swipeRefresh'          : "androidx.swiperefreshlayout:swiperefreshlayout:${versions.swipeRefresh}",
+        ],
+        kotlin    : [
+                'stdlib'                : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${versions.kotlin}",
+                'coroutinesCore'        : "org.jetbrains.kotlinx:kotlinx-coroutines-core:${versions.kotlinCoroutines}",
+                'coroutinesAndroid'     : "org.jetbrains.kotlinx:kotlinx-coroutines-android:${versions.kotlinCoroutines}",
+                'kotlinReflect'         : "org.jetbrains.kotlin:kotlin-reflect:${versions.kotlin}"
+        ],
+        google    : [
+                'googleMap'             : "com.google.android.gms:play-services-maps:${versions.googleMap}",
+                'googleCore'            : "com.google.android.play:core-ktx:${versions.googleCore}",
+                'guava'                 :  "com.google.guava:guava:${versions.guava}",
+                'firebaseBom'           : "com.google.firebase:firebase-bom:${versions.firebaseBom}",
+//                // When using the BoM, you don't specify versions in Firebase library dependencies
+                'firebaseMessaging'     : "com.google.firebase:firebase-messaging-ktx",
+                'firebaseCrashlytics'   : "com.google.firebase:firebase-crashlytics-ktx",
+                'firebaseAnalytics'     : "com.google.firebase:firebase-analytics-ktx",
+                'firebasePerf'          : "com.google.firebase:firebase-perf-ktx",
+                'ossLicenses'           : "com.google.android.gms:play-services-oss-licenses:${versions.ossLicenses}",
+                'hilt'                  : "com.google.dagger:hilt-android:${versions.hilt}",
+                'hiltCompiler'          : "com.google.dagger:hilt-compiler:${versions.hilt}",
+        ],
+        network    : [
+                'okhttp'                : "com.squareup.okhttp3:okhttp:${versions.okhttp}",
+                'okhttpLogging'         : "com.squareup.okhttp3:logging-interceptor:${versions.okhttp}",
+                'retrofit'              : "com.squareup.retrofit2:retrofit:${versions.retrofit}",
+                'moshi'                 : "com.squareup.moshi:moshi-kotlin:${versions.moshi}",
+                'moshiCodeGen'          : "com.squareup.moshi:moshi-kotlin-codegen:${versions.moshi}"
+        ],
+        other    : [
+                'iftttApi'              : "com.ifttt:connect-api:${versions.ifttt}",
+                'iftttButton'           : "com.ifttt:connect-button:${versions.ifttt}",
+                'viewPagerIndicator'    : "fr.avianey.com.viewpagerindicator:library:${versions.viewPagerIndicator}",
+                'jodaTime'              : "joda-time:joda-time:${versions.joda}",
+                'picasso'               : "com.squareup.picasso:picasso:${versions.picasso}",
+                'timber'                : "com.jakewharton.timber:timber:${versions.timber}",
+                'bimap'                 : "com.uchuhimo:kotlinx-bimap:1.2",
+                'glide'                 : "com.github.bumptech.glide:glide:${versions.glide}",
+                'glideCompiler'         : "com.github.bumptech.glide:compiler:${versions.glide}",
+                'shimmer'               : "com.facebook.shimmer:shimmer:${versions.shimmer}",
+                'lottie'                : "com.airbnb.android:lottie:${versions.lottie}"
+        ],
+        test      : [
+                // When using the BoM, you don't specify versions
+                'junit'                 : "org.junit:junit-bom:${versions.junit}",
+                'junitJupiter'          : "org.junit.jupiter:junit-jupiter",
+                'junitApi'              : "org.junit.jupiter:junit-jupiter-api",
+                'junitEngine'           : "org.junit.jupiter:junit-jupiter-engine",
+                'junitParams'           : "org.junit.jupiter:junit-jupiter-params",
+                'junitVintage'          : "org.junit.vintage:junit-vintage-engine",
+                'junitPlatform'         : "org.junit.platform:junit-platform-launcher",
+
+                'coroutinesTest'        : "org.jetbrains.kotlinx:kotlinx-coroutines-test:${versions.kotlinCoroutines}",
+                'mockito'               : "org.mockito:mockito-core:${versions.mockito}",
+                'mockitoJunit'          : "org.mockito:mockito-junit-jupiter:${versions.mockito}",
+                'mockitoKotlin'         : "org.mockito.kotlin:mockito-kotlin:${versions.mockitoKotlin}",
+                'testCore'              : "androidx.arch.core:core-testing:${versions.arch}",
+                'appcenterEspresso'     : "com.microsoft.appcenter:espresso-test-extension:${versions.appcenterEspresso}",
+                'testRules'             : "androidx.test:rules:${versions.testRules}",
+                'textExtJunit'          : "androidx.test.ext:junit:${versions.textExtJunit}",
+                'fastlaneScreenGrab'    : "tools.fastlane:screengrab:${versions.screengrap}",
+                'espressoCore'          : "androidx.test.espresso:espresso-core:${versions.espresso}",
+                'espressoContrib'       : "androidx.test.espresso:espresso-contrib:${versions.espresso}",
+                'robolectric'           : "org.robolectric:robolectric:${versions.robolectric}",
+                'xmlunit'               : "xmlunit:xmlunit:${versions.xmlunit}",
+                'turbine'               : "app.cash.turbine:turbine:${versions.turbine}",
+                'navFragmentTest'       : "androidx.navigation:navigation-testing:${versions.navFragmentComp}",
+                'plexus'                : "org.codehaus.plexus:plexus-utils:3.4.1",
+        ]
+]
